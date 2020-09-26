@@ -52,7 +52,7 @@ const TOKEN_NAME: &str = "PETROL_TOKEN";
 #[tokio::main]
 async fn main() {
     let error_msg = format!("Env variable {} must be present", TOKEN_NAME);
-    let token = env::var("DISCORD_TOKEN").expect(&error_msg);
+    let token = env::var(TOKEN_NAME).expect(&error_msg);
 
     let mut client = Client::new(&token)
         .event_handler(Handler)
